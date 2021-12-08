@@ -2,11 +2,11 @@
 
 .btn {
   padding: 0.5em 1em;
+  color: #333;
   cursor: pointer;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #fff;
-  color: #333;
   transition: 0.2s ease-out;
 
   &:not(:nth-last-child(1)) {
@@ -18,8 +18,8 @@
   }
 
   &.__active {
+    color: #fff;
     pointer-events: none;
     background-color: #333;
-    color: #fff;
   }
 }
