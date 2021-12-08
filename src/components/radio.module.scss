@@ -1,0 +1,25 @@
+.wrapper {}
+
+.btn {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  transition: 0.2s ease-out;
+
+  &:not(:nth-last-child(1)) {
+    margin-right: 0.75em;
+  }
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &.__active {
+    pointer-events: none;
+    background-color: #333;
+    color: #fff;
+  }
+}
