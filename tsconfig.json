@@ -16,7 +16,7 @@
     "noUnusedParameters": false,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
-    "target": "es5",
+    "target": "esnext",
     "outDir": "build",
     "declaration": true,
     "sourceMap": true,
