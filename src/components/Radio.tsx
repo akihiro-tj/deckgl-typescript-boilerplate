@@ -13,8 +13,6 @@ interface IButtonProps {
 
 export const Radio: React.FC<IProps> = ({ values, curValue, onClick }) => {
   const Button = styled.button<IButtonProps>`
-    cursor: pointer;
-
     padding: 0.5em 1em;
 
     border: 1px solid #ccc;
@@ -22,6 +20,7 @@ export const Radio: React.FC<IProps> = ({ values, curValue, onClick }) => {
     color: #333;
     background-color: #fff;
 
+    cursor: pointer;
     transition: 0.2s ease-out;
 
     &:not(:nth-last-child(1)) {
@@ -35,9 +34,9 @@ export const Radio: React.FC<IProps> = ({ values, curValue, onClick }) => {
     ${props =>
       props.isActive &&
       `
-        pointer-events: none;
         color: #fff;
         background-color: #333;
+        pointer-events: none;
       `}
   `;
 
