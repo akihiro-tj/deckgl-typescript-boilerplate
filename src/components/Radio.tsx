@@ -1,33 +1,57 @@
-import classNames from 'classnames';
 import React from 'react';
-import styles from './radio.module.scss';
+import styled from 'styled-components';
 
 interface IProps {
-  className?: string;
   values: string[];
   curValue: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Radio: React.FC<IProps> = ({
-  className,
-  values,
-  curValue,
-  onClick,
-}) => {
+interface IButtonProps {
+  isActive?: boolean;
+}
+
+export const Radio: React.FC<IProps> = ({ values, curValue, onClick }) => {
+  const Button = styled.button<IButtonProps>`
+    cursor: pointer;
+
+    padding: 0.5em 1em;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+
+    transition: 0.2s ease-out;
+
+    &:not(:nth-last-child(1)) {
+      margin-right: 0.75em;
+    }
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    ${props =>
+      props.isActive &&
+      `
+        pointer-events: none;
+        color: #fff;
+        background-color: #333;
+      `}
+  `;
+
   return (
-    <div className={classNames(className || '', styles.wrapper)}>
+    <div>
       {values.map(value => (
-        <button
-          className={classNames(styles.btn, {
-            [styles.__active]: value === curValue,
-          })}
+        <Button
           key={value}
+          isActive={value === curValue}
           data-value={value}
           onClick={onClick}
         >
           {value}
-        </button>
+        </Button>
       ))}
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
 import { Radio } from '../components/Radio';
-import styles from './app.module.scss';
 
 export const App: React.FC = () => {
   const values = ['A', 'B', 'C'];
@@ -12,12 +13,24 @@ export const App: React.FC = () => {
     setValue(clicked);
   };
 
+  const Wrapper = styled.div`
+    padding: 1.5rem;
+  `;
+
+  const Paragraph = styled.p`
+    font-size: 18px;
+  `;
+
+  const Value = styled.span`
+    font-weight: 700;
+  `;
+
   return (
-    <div className={styles.wrapper}>
+    <Wrapper>
       <Radio values={values} curValue={value} onClick={handleRadioClick} />
-      <p className={styles.paragraph}>
-        <span className={styles.strong}>{value}</span> is selected
-      </p>
-    </div>
+      <Paragraph>
+        <Value>{value}</Value> is selected
+      </Paragraph>
+    </Wrapper>
   );
 };
