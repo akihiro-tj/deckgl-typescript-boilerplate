@@ -30,7 +30,7 @@ $ yarn build
 ## Update from template repository
 
 ```
-$ git remote add template git@github.com:akihiro-tj/react-typescript-boilerplate.git
+$ git remote add template git@github.com:akihiro-tj/deckgl-typescript-boilerplate.git
 ```
 
 ```
