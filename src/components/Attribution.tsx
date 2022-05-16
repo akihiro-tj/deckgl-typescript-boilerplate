@@ -23,7 +23,11 @@ export const Attribution: React.FC<IProps> = ({ contributors }) => {
     font-size: 0.75rem;
   `;
 
-  const Link = styled.a``;
+  const Link = styled.a`
+    &:not(:nth-last-child(1)) {
+      margin-right: 0.5em;
+    }
+  `;
 
   return (
     <Wrapper>
@@ -38,10 +42,8 @@ export const Attribution: React.FC<IProps> = ({ contributors }) => {
           >
             {contributor.name}
           </Link>
-          &nbsp;
         </>
       ))}
-      contributors
     </Wrapper>
   );
 };
