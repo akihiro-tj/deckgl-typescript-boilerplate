@@ -31,6 +31,6 @@ $ yarn build
 
 ```
 $ git remote add template git@github.com:akihiro-tj/react-typescript-boilerplate.git
-$ git fetch --all
+$ git fetch template
 $ git merge template/master --allow-unrelated-histories
 ```
