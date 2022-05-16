@@ -9,7 +9,7 @@ $ yarn
 ## Develop
 
 ```
-$ yarn dev
+$ yarn start
 ```
 
 http://localhost:8000
