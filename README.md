@@ -1,4 +1,4 @@
-# React TypeScript Boilerplate
+# deck.gl TypeScript Boilerplate
 
 ## Setup
 
