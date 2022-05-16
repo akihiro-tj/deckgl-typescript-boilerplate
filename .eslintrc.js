@@ -13,13 +13,32 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'import', 'prettier'],
   parser: '@typescript-eslint/parser',
   rules: {
     'prettier/prettier': ['error', prettierOptions],
     'react/prop-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups: [],
+      },
+    ],
   },
   overrides: [
     {
